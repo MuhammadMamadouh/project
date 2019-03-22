@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5a0b9a6-da40-4b7f-98fb-d2bf77adf4eb" name="Default" comment="" />
+    <list default="true" id="b5a0b9a6-da40-4b7f-98fb-d2bf77adf4eb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -256,9 +258,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
@@ -568,7 +567,7 @@
       <workItem from="1553202630062" duration="10024000" />
       <workItem from="1553216113465" duration="7360000" />
       <workItem from="1553267214903" duration="9863000" />
-      <workItem from="1553293977865" duration="2720000" />
+      <workItem from="1553293977865" duration="3510000" />
     </task>
     <task id="LOCAL-00001" summary="fix some bugs">
       <created>1553283432013</created>
@@ -588,7 +587,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190528000" />
+    <option name="totallyTimeSpent" value="191318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
