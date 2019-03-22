@@ -102,6 +102,11 @@ class CategoryController extends Controller
         return back();
     }
 
+    /**
+     * Delete more records in one click
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function multi_destroy() {
         if (is_array(request('item'))) {
             Category::destroy(request('item'));

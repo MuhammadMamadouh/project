@@ -45,21 +45,21 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         // ======================================
 
         Route::resource('admins', 'AdminController');
-        Route::post('admins/destroy/all', 'AdminController@multi_destroy');
+        Route::delete('admins/destroy/all', 'AdminController@multi_destroy');
 
         // ======================================
         // Categories Links
         // ======================================
 
         Route::resource('categories', 'CategoryController');
-        Route::post('categories/destroy/all', 'CategoryController@multi_destroy');
+        Route::delete('categories/destroy/all', 'CategoryController@multi_destroy');
 
         // ======================================
         // News Links
         // ======================================
 
         Route::resource('news', 'NewsController');
-        Route::post('news/destroy/all', 'NewsController@multi_destroy');
+        Route::delete('news/destroy/all', 'NewsController@multi_destroy');
 
         // ======================================
         // Settings Links

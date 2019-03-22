@@ -152,7 +152,7 @@ class NewsController extends Controller
     {
         $news = News::findOrFail($id);
         Storage::delete($news->image);
-        foreach (json_decode($news->sub_images) as $image){
+        foreach (json_decode($news->sub_images) as $image) {
             Storage::delete($image);
         }
         $news->delete();
@@ -162,4 +162,22 @@ class NewsController extends Controller
         alert()->success('success', 'record has been deleted successfully');
         return back();
     }
+
+    /**
+     * Delete more records in one click
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function multi_destroy()
+    {
+
+        if (is_array(request('item'))) {
+            News::destroy(request('item'));
+        } else {
+            News::find(request('item'))->delete();
+        }
+        session()->flash('success', 'The records have been deleted successfully');
+        return redirect(aurl('news'));
+    }
+
 }

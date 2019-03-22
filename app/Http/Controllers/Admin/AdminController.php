@@ -81,4 +81,22 @@ class AdminController extends Controller
         alert()->success('success', 'an admin has been deleted successfully');
         return back();
     }
+
+    /**
+     * Delete more records in one click
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function multi_destroy()
+    {
+
+        if (is_array(request('item'))) {
+            Admin::destroy(request('item'));
+        } else {
+            Admin::find(request('item'))->delete();
+        }
+        session()->flash('success', 'The records have been deleted successfully');
+        return redirect(aurl('news'));
+    }
+
 }

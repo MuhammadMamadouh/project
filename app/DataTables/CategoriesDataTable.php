@@ -59,7 +59,7 @@ class CategoriesDataTable extends DataTable
                     ['extend' => 'excel', 'className' => 'btn btn-success', 'text' => '<i class="fa fa-file"></i> ' . trans('admin.ex_excel')],
                     ['extend' => 'reload', 'className' => 'btn btn-default', 'text' => '<i class="fa fa-refresh"></i>'],
                     [
-                        'text' => '<i class="fa fa-trash"></i>', 'className' => 'btn btn-danger delBtn'],
+                        'text' => '<i class="fa fa-trash"></i>', 'className' => 'btn btn-danger delBtn', 'data-toggle'=>"modal", 'data-target'=>"#mutlipleDelete"],
                 ],
             ]);
     }
