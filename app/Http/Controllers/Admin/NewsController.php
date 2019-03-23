@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\DataTables\NewsDataTable;
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\News;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
@@ -90,11 +89,8 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        $table = $news->getTable();
-        $columns = DB::getSchemaBuilder()->getColumnListing($table);
-        $records = DB::table($table)->get();
         $title = $news->name;
-        return view('admin.news.show', compact('news', 'title', 'columns', 'records'));
+        return view('admin.news.show', compact('news', 'title'));
     }
 
     /**
@@ -170,7 +166,6 @@ class NewsController extends Controller
      */
     public function multi_destroy()
     {
-
         if (is_array(request('item'))) {
             News::destroy(request('item'));
         } else {

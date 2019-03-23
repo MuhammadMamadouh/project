@@ -17,14 +17,14 @@
     <div class="box">
         <!-- /.box-header -->
         <div class="box-body">
-            @foreach($columns as $column)
+            @foreach($category->getAttributes() as $key => $value)
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">{{$column}}</h3>
+                        <h3 class="panel-title">{{$key}}</h3>
                     </div>
                     <div class="panel-body">
-                        {{$category->$column}}
+                        {{$value}}
                     </div>
                 </div>
 

@@ -57,7 +57,6 @@
             this.reset()
         });
         $('delete').click(function () {
-
         })
 
     </script>

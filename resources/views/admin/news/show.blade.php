@@ -17,29 +17,29 @@
         </div>
     </div>
     <div class="box">
-        <!-- /.box-header -->
+
         <div class="box-body">
-            @foreach($columns as $column)
+            @foreach($news->getAttributes() as $key=> $attribute)
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">{{$column}}</h3>
+                        <h3 class="panel-title">{{$key}}</h3>
                     </div>
                     <div class="panel-body">
-                        @if($column === 'content')
-                            {!!$news->$column !!}
-                        @elseif($column === 'image')
-                            <img class="img-responsive" src="{{\Storage::url($news->$column)}}">
-                        @elseif($column === 'sub_images')
-                            @foreach(json_decode($news->sub_images) as $image)
+                        @if($key === 'content')
+                            {!!$attribute !!}
+                        @elseif($key === 'image')
+                            <img class="img-responsive" src="{{\Storage::url($news->$key)}}">
+                        @elseif($key === 'sub_images')
+                            @foreach(json_decode($attribute) as $image)
                                 <img class="img-thumbnail" style="width: 100px" height="100px"
                                      src="{{\Storage::url($image)}}">
                             @endforeach
 
-                        @elseif($column === 'category_id')
+                        @elseif($key === 'category_id')
                             <a href="{{aurl('categories/' . $news->category->id)}}">{{$news->category->name}}</a>
                         @else
-                            {{$news->$column}}
+                            {{$attribute}}
                         @endif
                     </div>
                 </div>

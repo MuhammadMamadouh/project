@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Category;
 use App\DataTables\CategoriesDataTable;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
+use App\Models\Category;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -56,11 +55,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $table = $category->getTable();
-        $columns = DB::getSchemaBuilder()->getColumnListing($table);
-        $records = DB::table($table)->get();
         $title = $category->name;
-        return view('admin.categories.show', compact('category','title', 'columns','records'));
+        return view('admin.categories.show', compact('category', 'title'));
     }
 
     /**
